@@ -39,3 +39,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+docker/mongo-backup/
+docker/postgres-backup/

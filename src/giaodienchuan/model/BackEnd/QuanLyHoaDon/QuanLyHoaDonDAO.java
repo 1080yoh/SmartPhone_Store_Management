@@ -15,7 +15,7 @@ public class QuanLyHoaDonDAO {
     public QuanLyHoaDonDAO() {
     }
 
-    public ArrayList readDB() {
+    public ArrayList<HoaDon> readDB() {
         connection = new ConnectionDB();
         ArrayList<HoaDon> dshd = new ArrayList<>();
         try {

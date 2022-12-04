@@ -2,7 +2,9 @@ package giaodienchuan.model.BackEnd.QuanLyKhachHang;
 
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document("khachhang")
 public class KhachHang {
     @Id
     String maKH;

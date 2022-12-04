@@ -6,7 +6,9 @@
 package giaodienchuan.model.BackEnd.QuanLyNCC;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document("nhacungcap")
 public class NhaCungCap {
     @Id
     private String maNCC;

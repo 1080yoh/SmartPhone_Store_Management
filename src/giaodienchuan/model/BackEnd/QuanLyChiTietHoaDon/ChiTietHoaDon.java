@@ -1,7 +1,9 @@
 package giaodienchuan.model.BackEnd.QuanLyChiTietHoaDon;
 
 import lombok.Builder;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document("chitiethoadon")
 public class ChiTietHoaDon {
 
     private String maHoaDon;

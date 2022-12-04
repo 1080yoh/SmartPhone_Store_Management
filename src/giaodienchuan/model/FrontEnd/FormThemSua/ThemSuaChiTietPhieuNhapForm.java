@@ -84,7 +84,7 @@ public class ThemSuaChiTietPhieuNhapForm extends JFrame {
                 JOptionPane.showMessageDialog(null, "Lỗi, không tìm thấy chi tiết hóa đơn");
                 this.dispose();
             }
-            txMapn.setText(this.ctpnSua.getMa());
+            txMapn.setText(this.ctpnSua.getMaPN());
             txMapn.setEditable(false);
             txSoLuong.setText(String.valueOf(this.ctpnSua.getSoLuong()));
             txMasp.setText(this.masp);

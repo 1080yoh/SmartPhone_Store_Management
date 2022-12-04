@@ -1,7 +1,9 @@
 package giaodienchuan.model.BackEnd.QuanLyLoaiSanPham;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document("loaisanpham")
 public class LoaiSanPham {
     @Id
     String maLSP;

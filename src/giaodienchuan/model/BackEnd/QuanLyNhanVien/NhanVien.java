@@ -1,9 +1,11 @@
 package giaodienchuan.model.BackEnd.QuanLyNhanVien;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 
+@Document("nhanvien")
 public class NhanVien {
 
     @Id

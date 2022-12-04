@@ -6,5 +6,6 @@ public class SystemEnvConfig {
                 "spring.data.mongodb.uri",
                 "mongodb://mongo:mongo@localhost:27017/quanlysieuthidienthoai"
         );
+        System.setProperty("application.sync.db", "false");
     }
 }

@@ -6,10 +6,12 @@
 package giaodienchuan.model.BackEnd.QuanLyChiTietPN;
 
 import lombok.Builder;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document("chitietphieunhap")
 public class ChiTietPhieuNhap {
 
-    String ma;
+    String maPN;
     String maSP;
     Integer soLuong;
     Float donGia;
@@ -20,18 +22,18 @@ public class ChiTietPhieuNhap {
 
     @Builder
     public ChiTietPhieuNhap(String ma, String maSP, Integer soLuong, Float donGia) {
-        this.ma = ma;
+        this.maPN = ma;
         this.maSP = maSP;
         this.soLuong = soLuong;
         this.donGia = donGia;
     }
 
-    public String getMa() {
-        return ma;
+    public String getMaPN() {
+        return maPN;
     }
 
-    public void setMa(String ma) {
-        this.ma = ma;
+    public void setMaPN(String maPN) {
+        this.maPN = maPN;
     }
 
     public String getMaSP() {

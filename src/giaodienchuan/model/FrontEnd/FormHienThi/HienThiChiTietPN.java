@@ -95,7 +95,7 @@ public class HienThiChiTietPN extends FormHienThi {
         for (ChiTietPhieuNhap pn : data) {
             mtb.addRow(new String[]{
                 String.valueOf(stt), 
-                pn.getMa(), 
+                pn.getMaPN(),
                 pn.getMaSP(),
                 qlspBUS.getSanPham(pn.getMaSP()).getTenSP(),
                 String.valueOf(pn.getSoLuong()), 

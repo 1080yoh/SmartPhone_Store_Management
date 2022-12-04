@@ -2,7 +2,9 @@ package giaodienchuan.model.BackEnd.QuanLySanPham;
 
 import lombok.Builder;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document("sanpham")
 public class SanPham {
 
     @Id

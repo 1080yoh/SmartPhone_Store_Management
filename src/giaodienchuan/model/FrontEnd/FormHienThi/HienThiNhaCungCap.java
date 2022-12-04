@@ -22,10 +22,6 @@ import javax.swing.JLabel;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-/**
- *
- * @author Admin
- */
 public class HienThiNhaCungCap extends FormHienThi {
 
     QuanLyNhaCungCapBUS BUS = new QuanLyNhaCungCapBUS();
@@ -99,7 +95,7 @@ public class HienThiNhaCungCap extends FormHienThi {
         int stt = 1; // lưu số thứ tự dòng hiện tại
         for (NhaCungCap ncc : data) {
             table.addRow(new String[]{String.valueOf(stt), ncc.getMaNCC(), ncc.getTenNCC(), ncc.getDiaChi(),
-                String.valueOf(ncc.getSDT()), String.valueOf(ncc.getFax())});
+                String.valueOf(ncc.getSdt()), String.valueOf(ncc.getFax())});
             stt++;
         }
     }

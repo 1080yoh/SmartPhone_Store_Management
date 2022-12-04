@@ -1,36 +1,42 @@
 package giaodienchuan.model.BackEnd.QuanLyQuyen;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document("phanquyen")
 public class Quyen {
-    
-    String MaQuyen, TenQuyen, ChiTietQuyen;
+
+    @Id
+    String maQuyen;
+    String tenQuyen, chiTietQuyen;
     
     public Quyen(String maquyen, String tenquyen, String chitietquyen) {
-        this.MaQuyen = maquyen;
-        this.TenQuyen = tenquyen;
-        this.ChiTietQuyen = chitietquyen;
+        this.maQuyen = maquyen;
+        this.tenQuyen = tenquyen;
+        this.chiTietQuyen = chitietquyen;
     }
 
     public String getTenQuyen() {
-        return TenQuyen;
+        return tenQuyen;
     }
 
     public void setTenQuyen(String TenQuyen) {
-        this.TenQuyen = TenQuyen;
+        this.tenQuyen = TenQuyen;
     }
 
     public String getMaQuyen() {
-        return MaQuyen;
+        return maQuyen;
     }
 
     public void setMaQuyen(String MaQuyen) {
-        this.MaQuyen = MaQuyen;
+        this.maQuyen = MaQuyen;
     }
 
     public String getChiTietQuyen() {
-        return ChiTietQuyen;
+        return chiTietQuyen;
     }
 
     public void setChiTietQuyen(String ChiTietQuyen) {
-        this.ChiTietQuyen = ChiTietQuyen;
+        this.chiTietQuyen = ChiTietQuyen;
     }
 }

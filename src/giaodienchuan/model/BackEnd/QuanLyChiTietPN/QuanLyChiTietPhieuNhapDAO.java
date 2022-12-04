@@ -11,10 +11,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Admin
- */
 public class QuanLyChiTietPhieuNhapDAO {
 
     ConnectionDB qlctpnConnection;
@@ -78,7 +74,7 @@ public class QuanLyChiTietPhieuNhapDAO {
     public boolean add(ChiTietPhieuNhap ctpn) {
         qlctpnConnection = new ConnectionDB();
         Boolean ok = qlctpnConnection.sqlUpdate("INSERT INTO `chitietphieunhap`(`MaPN`,`MaSP`,`SoLuong`,`DonGia`) VALUE('"
-                + ctpn.getMa() + "', '" + ctpn.getMaSP() + "','" + ctpn.getSoLuong() + "','" + ctpn.getDonGia() + "')");
+                + ctpn.getMaPN() + "', '" + ctpn.getMaSP() + "','" + ctpn.getSoLuong() + "','" + ctpn.getDonGia() + "')");
         qlctpnConnection.closeConnect();
         return ok;
 

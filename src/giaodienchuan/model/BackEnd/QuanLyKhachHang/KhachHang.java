@@ -1,56 +1,61 @@
-
 package giaodienchuan.model.BackEnd.QuanLyKhachHang;
 
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document("khachhang")
 public class KhachHang {
-    String MaKH, TenKH, DiaChi, SDT;
-    int TrangThai;
+    @Id
+    String maKH;
+    String tenKH, diaChi, sdt;
+    int trangThai;
 
     public KhachHang(String MaKH, String TenKH, String DiaChi, String SDT, int TrangThai) {
-        this.MaKH = MaKH;
-        this.TenKH = TenKH;
-        this.DiaChi = DiaChi;
-        this.SDT = SDT;
-        this.TrangThai = TrangThai;
+        this.maKH = MaKH;
+        this.tenKH = TenKH;
+        this.diaChi = DiaChi;
+        this.sdt = SDT;
+        this.trangThai = TrangThai;
     }
 
     public String getMaKH() {
-        return MaKH;
+        return maKH;
     }
 
     public void setMaKH(String MaKH) {
-        this.MaKH = MaKH;
+        this.maKH = MaKH;
     }
 
     public String getTenKH() {
-        return TenKH;
+        return tenKH;
     }
 
     public void setTenKH(String TenKH) {
-        this.TenKH = TenKH;
+        this.tenKH = TenKH;
     }
 
     public String getDiaChi() {
-        return DiaChi;
+        return diaChi;
     }
 
     public void setDiaChi(String DiaChi) {
-        this.DiaChi = DiaChi;
+        this.diaChi = DiaChi;
     }
 
-    public String getSDT() {
-        return SDT;
+    public String getSdt() {
+        return sdt;
     }
 
-    public void setSDT(String SDT) {
-        this.SDT = SDT;
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
     }
 
     public int getTrangThai() {
-        return TrangThai;
+        return trangThai;
     }
 
     public void setTrangThai(int TrangThai) {
-        this.TrangThai = TrangThai;
+        this.trangThai = TrangThai;
     }
 }

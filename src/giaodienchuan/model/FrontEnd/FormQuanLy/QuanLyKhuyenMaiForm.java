@@ -25,10 +25,6 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author DELL
- */
 public class QuanLyKhuyenMaiForm extends JPanel {
 
     HienThiKhuyenMai formHienThi = new HienThiKhuyenMai();

@@ -12,10 +12,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author DELL
- */
 public class QuanLyKhuyenMaiDAO {
     ConnectionDB qlkmConnection;
 

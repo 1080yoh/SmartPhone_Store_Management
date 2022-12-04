@@ -7,10 +7,6 @@ package giaodienchuan.model.FrontEnd.FormQuanLy;
 
 import javax.swing.JPanel;
 
-/**
- *
- * @author DELL
- */
 public class NhapHangForm extends JPanel {
 
     public NhapHangForm(int width, int height) {

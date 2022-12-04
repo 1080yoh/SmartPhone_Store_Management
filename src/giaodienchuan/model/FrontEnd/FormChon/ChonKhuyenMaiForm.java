@@ -15,10 +15,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-/**
- *
- * @author DELL
- */
 public class ChonKhuyenMaiForm extends JFrame {
 
     HienThiKhuyenMai formHienThi = new HienThiKhuyenMai();

@@ -18,10 +18,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-/**
- *
- * @author Admin
- */
 public class ThemSuaChiTietPhieuNhapForm extends JFrame {
 
     QuanLyChiTietPhieuNhapBUS qlctpnBUS = new QuanLyChiTietPhieuNhapBUS();
@@ -88,7 +84,7 @@ public class ThemSuaChiTietPhieuNhapForm extends JFrame {
                 JOptionPane.showMessageDialog(null, "Lỗi, không tìm thấy chi tiết hóa đơn");
                 this.dispose();
             }
-            txMapn.setText(this.ctpnSua.getMa());
+            txMapn.setText(this.ctpnSua.getMaPN());
             txMapn.setEditable(false);
             txSoLuong.setText(String.valueOf(this.ctpnSua.getSoLuong()));
             txMasp.setText(this.masp);

@@ -7,10 +7,6 @@ package giaodienchuan.model.FrontEnd.FormQuanLy;
 
 import javax.swing.JPanel;
 
-/**
- *
- * @author DELL
- */
 public class BanHangForm extends JPanel {
 
     public BanHangForm(int width, int height) {

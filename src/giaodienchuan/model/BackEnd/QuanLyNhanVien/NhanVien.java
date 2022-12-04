@@ -1,68 +1,73 @@
-
 package giaodienchuan.model.BackEnd.QuanLyNhanVien;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 
+@Document("nhanvien")
 public class NhanVien {
 
-    String MaNV, TenNV, DiaChi, SDT;
-    LocalDate NgaySinh;
-    int TrangThai;
+    @Id
+    String maNV;
+    String tenNV, diaChi, sdt;
+    LocalDate ngaySinh;
+    int trangThai;
 
-    public NhanVien(String MaNV, String TenNV, LocalDate NgaySinh, String DiaChi, String SDT, int trangthai) {
-        this.MaNV = MaNV;
-        this.TenNV = TenNV;
-        this.NgaySinh = NgaySinh;
-        this.DiaChi = DiaChi;
-        this.SDT = SDT;
-        this.TrangThai = trangthai;
+    public NhanVien(String MaNV, String TenNV, LocalDate NgaySinh, String DiaChi, String sdt, int trangthai) {
+        this.maNV = MaNV;
+        this.tenNV = TenNV;
+        this.ngaySinh = NgaySinh;
+        this.diaChi = DiaChi;
+        this.sdt = sdt;
+        this.trangThai = trangthai;
     }
 
     public String getMaNV() {
-        return MaNV;
+        return maNV;
     }
 
     public void setMaNV(String MaNV) {
-        this.MaNV = MaNV;
+        this.maNV = MaNV;
     }
 
     public String getTenNV() {
-        return TenNV;
+        return tenNV;
     }
 
     public void setTenNV(String TenNV) {
-        this.TenNV = TenNV;
+        this.tenNV = TenNV;
     }
 
     public LocalDate getNgaySinh() {
-        return NgaySinh;
+        return ngaySinh;
     }
 
     public void setNgaySinh(LocalDate NgaySinh) {
-        this.NgaySinh = NgaySinh;
+        this.ngaySinh = NgaySinh;
     }
 
     public String getDiaChi() {
-        return DiaChi;
+        return diaChi;
     }
 
     public void setDiaChi(String DiaChi) {
-        this.DiaChi = DiaChi;
+        this.diaChi = DiaChi;
     }
 
-    public String getSDT() {
-        return SDT;
+    public String getSdt() {
+        return sdt;
     }
 
-    public void setSDT(String SDT) {
-        this.SDT = SDT;
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
     }
 
     public int getTrangThai() {
-        return TrangThai;
+        return trangThai;
     }
 
     public void setTrangThai(int TrangThai) {
-        this.TrangThai = TrangThai;
+        this.trangThai = TrangThai;
     }
 }

@@ -16,10 +16,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
-/**
- *
- * @author DELL
- */
 public class DoiMatKhauForm extends JFrame {
 
     TaiKhoan tk;

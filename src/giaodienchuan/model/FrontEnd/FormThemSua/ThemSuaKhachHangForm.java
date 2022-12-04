@@ -86,7 +86,7 @@ public class ThemSuaKhachHangForm extends JFrame {
             txMakh.setText(this.khSua.getMaKH());
             txTenkh.setText(this.khSua.getTenKH());
             txDiachi.setText(this.khSua.getDiaChi());
-            txSDT.setText(this.khSua.getSDT());
+            txSDT.setText(this.khSua.getSdt());
 
             txMakh.setEditable(false);
 

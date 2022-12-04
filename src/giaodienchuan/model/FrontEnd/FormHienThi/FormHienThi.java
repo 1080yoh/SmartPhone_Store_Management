@@ -8,10 +8,6 @@ package giaodienchuan.model.FrontEnd.FormHienThi;
 import giaodienchuan.model.FrontEnd.GiaoDienChuan.MyTable;
 import javax.swing.JPanel;
 
-/**
- *
- * @author DELL
- */
 public class FormHienThi extends JPanel {
     
     MyTable mtb;

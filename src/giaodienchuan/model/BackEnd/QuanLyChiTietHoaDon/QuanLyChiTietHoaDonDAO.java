@@ -13,7 +13,7 @@ public class QuanLyChiTietHoaDonDAO {
     public QuanLyChiTietHoaDonDAO() {
     }
 
-    public ArrayList readDB() {
+    public ArrayList<ChiTietHoaDon> readDB() {
         connection = new ConnectionDB();
         ArrayList<ChiTietHoaDon> dshd = new ArrayList<>();
         try {

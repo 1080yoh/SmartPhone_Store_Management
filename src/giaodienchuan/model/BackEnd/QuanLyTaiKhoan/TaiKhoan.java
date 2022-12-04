@@ -1,7 +1,13 @@
 package giaodienchuan.model.BackEnd.QuanLyTaiKhoan;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document("taikhoan")
 public class TaiKhoan {
-    String username, password, maNV, maQuyen;
+    @Id
+    String username;
+    String password, maNV, maQuyen;
     
     public TaiKhoan(String username, String password, String maNV, String maQuyen) {
         this.username = username;

@@ -13,10 +13,6 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Admin
- */
 public class QuanLyPhieuNhapDAO {
 
     ConnectionDB connection;
@@ -24,7 +20,7 @@ public class QuanLyPhieuNhapDAO {
     public QuanLyPhieuNhapDAO() {
     }
 
-    public ArrayList readDB() {
+    public ArrayList<PhieuNhap> readDB() {
         connection = new ConnectionDB();
         ArrayList<PhieuNhap> dspn = new ArrayList<>();
         try {

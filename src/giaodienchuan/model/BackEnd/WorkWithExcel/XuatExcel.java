@@ -46,10 +46,6 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 
-/**
- *
- * @author Admin
- */
 public class XuatExcel {
 
     FileDialog fd = new FileDialog(new JFrame(), "Xuất excel", FileDialog.SAVE);
@@ -98,7 +94,7 @@ public class XuatExcel {
                 row.createCell(1, CellType.STRING).setCellValue(ncc.getMaNCC());
                 row.createCell(2, CellType.STRING).setCellValue(ncc.getTenNCC());
                 row.createCell(3, CellType.STRING).setCellValue(ncc.getDiaChi());
-                row.createCell(4, CellType.STRING).setCellValue(ncc.getSDT());
+                row.createCell(4, CellType.STRING).setCellValue(ncc.getSdt());
                 row.createCell(5, CellType.STRING).setCellValue(ncc.getFax());
             }
             for (int i = 0; i < rownum; i++) {
@@ -163,7 +159,7 @@ public class XuatExcel {
                 row.createCell(2, CellType.STRING).setCellValue(nv.getTenNV());
                 row.createCell(3, CellType.STRING).setCellValue(String.valueOf(nv.getNgaySinh()));
                 row.createCell(4, CellType.STRING).setCellValue(nv.getDiaChi());
-                row.createCell(5, CellType.STRING).setCellValue(nv.getSDT());
+                row.createCell(5, CellType.STRING).setCellValue(nv.getSdt());
                 row.createCell(6, CellType.STRING).setCellValue((nv.getTrangThai() == 0 ? "Hiện" : "Ẩn"));
             }
             for (int i = 0; i < rownum; i++) {
@@ -226,7 +222,7 @@ public class XuatExcel {
                 row.createCell(1, CellType.STRING).setCellValue(kh.getMaKH());
                 row.createCell(2, CellType.STRING).setCellValue(kh.getTenKH());
                 row.createCell(3, CellType.STRING).setCellValue(kh.getDiaChi());
-                row.createCell(4, CellType.STRING).setCellValue(kh.getSDT());
+                row.createCell(4, CellType.STRING).setCellValue(kh.getSdt());
                 row.createCell(5, CellType.STRING).setCellValue((kh.getTrangThai() == 0 ? "Hiện" : "Ẩn"));
             }
             for (int i = 0; i < rownum; i++) {

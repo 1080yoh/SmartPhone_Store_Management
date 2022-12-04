@@ -23,10 +23,6 @@ import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-/**
- *
- * @author Admin
- */
 public class HienThiChiTietPN extends FormHienThi {
 
     QuanLyChiTietPhieuNhapBUS qlctpn = new QuanLyChiTietPhieuNhapBUS();
@@ -99,7 +95,7 @@ public class HienThiChiTietPN extends FormHienThi {
         for (ChiTietPhieuNhap pn : data) {
             mtb.addRow(new String[]{
                 String.valueOf(stt), 
-                pn.getMa(), 
+                pn.getMaPN(),
                 pn.getMaSP(),
                 qlspBUS.getSanPham(pn.getMaSP()).getTenSP(),
                 String.valueOf(pn.getSoLuong()), 

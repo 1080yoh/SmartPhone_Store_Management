@@ -1,17 +1,15 @@
 package giaodienchuan.model.BackEnd.ConnectionDB;
 
-import giaodienchuan.model.BackEnd.spring.services.MongoFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
+import javax.swing.*;
+import java.sql.*;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 public class ConnectionDB {
+
+    private static final Logger logger = LoggerFactory.getLogger(ConnectionDB.class);
 
     static int countConection = 0;
     static int countQuery = 0;
@@ -55,12 +53,9 @@ public class ConnectionDB {
             conn = DriverManager.getConnection(url, user_Name, pass);
             stmt = conn.createStatement();
             countConection++;
-            System.out.println("**\n" + countConection + ": Success! Đã kết nối tới '" + DB_Name + "'");
-
         } catch (SQLException e) {
-            System.err.println("-- ERROR! Không thể kết nối tới '" + DB_Name + "'");
+            logger.error("Loi khi ket noi csdl", e);
             JOptionPane.showMessageDialog(null, "-- ERROR! Không thể kết nối tới '" + DB_Name + "'");
-            e.printStackTrace();
         }
     }
 
@@ -77,10 +72,10 @@ public class ConnectionDB {
             try {
                 rset = stmt.executeQuery(qry);
                 countQuery++;
-                System.out.println(countQuery + ": Success Query! " + qry);
                 return rset;
 
             } catch (SQLException ex) {
+                logger.error("ERROR! Không thể lấy dữ liệu từ DB", ex);
                 JOptionPane.showMessageDialog(null, "-- ERROR! Không thể lấy dữ liệu từ " + DB_Name + "\n" + ex.getLocalizedMessage());
                 return null;
             }
@@ -94,10 +89,9 @@ public class ConnectionDB {
             try {
                 stmt.executeUpdate(qry);
                 countUpdate++;
-                System.out.println(countUpdate + ": Success Update! " + qry);
                 return true;
-
             } catch (SQLException ex) {
+                logger.error("ERROR! Không thể ghi dữ liệu xuống DB", ex);
                 JOptionPane.showMessageDialog(null, "-- ERROR! Không thể ghi dữ liệu xuống " + DB_Name + "\n" + ex.getLocalizedMessage());
                 return false;
             }
@@ -114,8 +108,8 @@ public class ConnectionDB {
             if (stmt != null) {
                 stmt.close();
             }
-            System.out.println("Success! Đóng kết nối tới '" + DB_Name + "' thành công.\n**");
         } catch (SQLException ex) {
+            logger.error("ERROR! Không thể đóng kết nối tới DB", ex);
             JOptionPane.showMessageDialog(null, "-- ERROR! Không thể đóng kết nối tới " + DB_Name + "\n" + ex.getLocalizedMessage());
         }
     }
@@ -123,6 +117,7 @@ public class ConnectionDB {
     // check logIn, connect
     public Boolean checkConnect() {
         if (conn == null || stmt == null) {
+            logger.error("ERROR! Chưa thiết lập kết nối tới " + DB_Name + ". Vui lòng đăng nhập để thiết lập kết nối!");
             JOptionPane.showMessageDialog(null, "-- ERROR! Chưa thiết lập kết nối tới '" + DB_Name + "'. Vui lòng đăng nhập để thiết lập kết nối!");
             return false;
         }
@@ -134,6 +129,7 @@ public class ConnectionDB {
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
+            logger.error("ERROR! Không tìm thấy Driver mySql ", e);
             JOptionPane.showMessageDialog(null, "-- ERROR! Không tìm thấy Driver mySql");
         }
     }
@@ -148,6 +144,7 @@ public class ConnectionDB {
                     headers.add(rsMetaData.getColumnName(i));
                 }
             } catch (SQLException e) {
+                logger.error("ERROR! Không thể lấy headers của " + tableName, e);
                 JOptionPane.showMessageDialog(null, "-- ERROR! Không thể lấy headers của " + tableName + " trong " + DB_Name);
             }
         }

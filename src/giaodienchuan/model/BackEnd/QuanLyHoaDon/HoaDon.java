@@ -1,17 +1,22 @@
 package giaodienchuan.model.BackEnd.QuanLyHoaDon;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+@Document("hoadon")
 public class HoaDon {
 
-    private String maHoaDon = "";
+    @Id
+    private String maHoaDon;
     private String maNhanVien = "";
     private String maKhachHang = "";
     private String maKhuyenMai = "";
     private LocalDate ngayLap;
     private LocalTime gioLap;
-    private float TongTien = 0;
+    private float tongTien = 0;
 
     public HoaDon() {
         ngayLap = LocalDate.now();
@@ -25,7 +30,7 @@ public class HoaDon {
         this.maKhuyenMai = maKhuyenMai;
         this.ngayLap = ngayNhap;
         this.gioLap = gioNhap;
-        this.TongTien = tongTien;
+        this.tongTien = tongTien;
     }
 
     public String getMaHoaDon() {
@@ -69,11 +74,11 @@ public class HoaDon {
     }
 
     public float getTongTien() {
-        return TongTien;
+        return tongTien;
     }
 
     public void setTongTien(float TongTien) {
-        this.TongTien = TongTien;
+        this.tongTien = TongTien;
     }
 
     public String getMaKhuyenMai() {

@@ -5,21 +5,22 @@
  */
 package giaodienchuan.model.BackEnd.QuanLyPhieuNhap;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-/**
- *
- * @author Admin
- */
+@Document("phieunhap")
 public class PhieuNhap {
 
+    @Id
     String maPN;
     String maNCC;
     String maNV;
     LocalDate ngayNhap;
     LocalTime gioNhap;
-    float tongTien = 0;
+    float tongTien = 0F;
 
     public PhieuNhap() {
         this.ngayNhap = LocalDate.now();
@@ -40,44 +41,44 @@ public class PhieuNhap {
         return maPN;
     }
 
-    public String getMaNCC() {
-        return maNCC;
-    }
-
-    public String getMaNV() {
-        return maNV;
-    }
-
-    public LocalDate getNgayNhap() {
-        return ngayNhap;
-    }
-
-    public LocalTime getGioNhap() {
-        return gioNhap;
-    }
-
-    public Float getTongTien() {
-        return tongTien;
-    }
-
     public void setMaPN(String maPN) {
         this.maPN = maPN;
+    }
+
+    public String getMaNCC() {
+        return maNCC;
     }
 
     public void setMaNCC(String maNCC) {
         this.maNCC = maNCC;
     }
 
+    public String getMaNV() {
+        return maNV;
+    }
+
     public void setMaNV(String maNV) {
         this.maNV = maNV;
+    }
+
+    public LocalDate getNgayNhap() {
+        return ngayNhap;
     }
 
     public void setNgayNhap(LocalDate ngayNhap) {
         this.ngayNhap = ngayNhap;
     }
 
+    public LocalTime getGioNhap() {
+        return gioNhap;
+    }
+
     public void setGioNhap(LocalTime gioNhap) {
         this.gioNhap = gioNhap;
+    }
+
+    public Float getTongTien() {
+        return tongTien;
     }
 
     public void setTongTien(float tongTien) {

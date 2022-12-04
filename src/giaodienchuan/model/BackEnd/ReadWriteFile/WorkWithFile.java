@@ -14,10 +14,6 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author DELL
- */
 public class WorkWithFile {
     
     String urlFile;

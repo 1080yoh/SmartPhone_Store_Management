@@ -5,15 +5,12 @@
  */
 package giaodienchuan.model.BackEnd.QuanLyChiTietPN;
 
-import giaodienchuan.model.BackEnd.QuanLySanPham.SanPham;
 import giaodienchuan.model.BackEnd.QuanLyPhieuNhap.QuanLyPhieuNhapBUS;
 import giaodienchuan.model.BackEnd.QuanLySanPham.QuanLySanPhamBUS;
+import giaodienchuan.model.BackEnd.QuanLySanPham.SanPham;
+
 import java.util.ArrayList;
 
-/**
- *
- * @author Admin
- */
 public class QuanLyChiTietPhieuNhapBUS {
 
     QuanLyChiTietPhieuNhapDAO qlctpnDAO = new QuanLyChiTietPhieuNhapDAO();
@@ -34,7 +31,7 @@ public class QuanLyChiTietPhieuNhapBUS {
         ArrayList<ChiTietPhieuNhap> result = new ArrayList<>();
         dsctpn.forEach((ctpn) -> {
             if (type.equals("Tất cả")) {
-                if (ctpn.getMa().toLowerCase().contains(value.toLowerCase())
+                if (ctpn.getMaPN().toLowerCase().contains(value.toLowerCase())
                         || ctpn.getMaSP().toLowerCase().contains(value.toLowerCase())
                         || String.valueOf(ctpn.getDonGia()).toLowerCase().contains(value.toLowerCase())
                         || String.valueOf(ctpn.getSoLuong()).toLowerCase().contains(value.toLowerCase())) {
@@ -43,7 +40,7 @@ public class QuanLyChiTietPhieuNhapBUS {
             } else {
                 switch (type) {
                     case "Mã phiếu nhập":
-                        if (ctpn.getMa().toLowerCase().contains(value.toLowerCase())) {
+                        if (ctpn.getMaPN().toLowerCase().contains(value.toLowerCase())) {
                             result.add(ctpn);
                         }
                         break;
@@ -74,7 +71,7 @@ public class QuanLyChiTietPhieuNhapBUS {
         Boolean success = qlctpnDAO.deleteAll(_maPhieuNhap);
         if (success) {
             for (ChiTietPhieuNhap cthd : dsctpn) {
-                if (cthd.getMa().equals(_maPhieuNhap)) {
+                if (cthd.getMaPN().equals(_maPhieuNhap)) {
                     dsctpn.remove(cthd);
                 }
             }
@@ -86,17 +83,17 @@ public class QuanLyChiTietPhieuNhapBUS {
 
     public ChiTietPhieuNhap getChiTiet(String mapn, String masp) {
         for (ChiTietPhieuNhap ct : dsctpn) {
-            if (ct.getMaSP().equals(masp) && ct.getMa().equals(mapn)) {
+            if (ct.getMaSP().equals(masp) && ct.getMaPN().equals(mapn)) {
                 return ct;
             }
         }
         return null;
     }
-    
+
     public ArrayList<ChiTietPhieuNhap> getAllChiTiet(String mapn) {
         ArrayList<ChiTietPhieuNhap> result = new ArrayList<>();
-        for(ChiTietPhieuNhap ctpn : dsctpn) {
-            if(ctpn.getMa().equals(mapn)) {
+        for (ChiTietPhieuNhap ctpn : dsctpn) {
+            if (ctpn.getMaPN().equals(mapn)) {
                 result.add(ctpn);
             }
         }
@@ -107,7 +104,7 @@ public class QuanLyChiTietPhieuNhapBUS {
         Boolean success = qlctpnDAO.delete(_maPhieuNhap, _maSanPham);
         if (success) {
             for (ChiTietPhieuNhap ctpn : dsctpn) {
-                if (ctpn.getMa().equals(_maPhieuNhap) && ctpn.getMaSP().equals(_maSanPham)) {
+                if (ctpn.getMaPN().equals(_maPhieuNhap) && ctpn.getMaSP().equals(_maSanPham)) {
                     updateSoLuongSanPham(_maSanPham, ctpn.getSoLuong());
                     dsctpn.remove(ctpn);
                     updateTongTien(_maPhieuNhap);
@@ -126,14 +123,14 @@ public class QuanLyChiTietPhieuNhapBUS {
         int tongSoLuong = ct.getSoLuong();
 
         for (ChiTietPhieuNhap ctpn : dsctpn) {
-            if (ctpn.getMa().equals(ct.getMa()) && ctpn.getMaSP().equals(ct.getMaSP())) {
+            if (ctpn.getMaPN().equals(ct.getMaPN()) && ctpn.getMaSP().equals(ct.getMaSP())) {
                 tongSoLuong += ctpn.getSoLuong();
                 toRemove.add(ctpn);
             }
         }
         // xóa chi tiết cũ cùng mã
         dsctpn.removeAll(toRemove);
-        qlctpnDAO.delete(ct.getMa(), ct.getMaSP());
+        qlctpnDAO.delete(ct.getMaPN(), ct.getMaSP());
 
         // thêm chi tiết mới có số lượng = tổng số lượng tìm ở trên
         ct.setSoLuong(tongSoLuong);
@@ -141,7 +138,7 @@ public class QuanLyChiTietPhieuNhapBUS {
         if (success) {
             dsctpn.add(ct);
             updateSoLuongSanPham(ct.getMaSP(), soLuongChiTietMoi);
-            updateTongTien(ct.getMa());
+            updateTongTien(ct.getMaPN());
             return true;
         }
         return false;
@@ -166,7 +163,7 @@ public class QuanLyChiTietPhieuNhapBUS {
         Boolean ok = qlctpnDAO.deleteAll(ma);
         if (ok) {
             for (int i = (dsctpn.size() - 1); i >= 0; i--) {
-                if (dsctpn.get(i).getMa().equals(ma)) {
+                if (dsctpn.get(i).getMaPN().equals(ma)) {
                     dsctpn.remove(i);
                 }
             }
@@ -180,7 +177,7 @@ public class QuanLyChiTietPhieuNhapBUS {
 
         if (ok) {
             dsctpn.forEach((ctpn) -> {
-                if (ctpn.getMa().equals(mapn) && ctpn.getMaSP().equals(masp)) {
+                if (ctpn.getMaPN().equals(mapn) && ctpn.getMaSP().equals(masp)) {
                     ChiTietPhieuNhap pn = new ChiTietPhieuNhap(mapn, masp, soluong, dongia);
                     dsctpn.add(pn);
                 }
@@ -193,7 +190,7 @@ public class QuanLyChiTietPhieuNhapBUS {
     private Boolean updateTongTien(String _mapn) {
         float tong = 0;
         for (ChiTietPhieuNhap ct : dsctpn) {
-            if (ct.getMa().equals(_mapn)) {
+            if (ct.getMaPN().equals(_mapn)) {
                 tong += ct.getSoLuong() * ct.getDonGia();
             }
         }

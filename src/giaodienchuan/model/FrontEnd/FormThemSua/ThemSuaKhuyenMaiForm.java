@@ -20,10 +20,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-/**
- *
- * @author DELL
- */
 public class ThemSuaKhuyenMaiForm extends JFrame {
 
     String type;

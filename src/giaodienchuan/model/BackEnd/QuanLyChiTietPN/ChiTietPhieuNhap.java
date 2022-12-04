@@ -5,11 +5,12 @@
  */
 package giaodienchuan.model.BackEnd.QuanLyChiTietPN;
 
+import giaodienchuan.model.BackEnd.common.CommonDTO;
 import lombok.Builder;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("chitietphieunhap")
-public class ChiTietPhieuNhap {
+public class ChiTietPhieuNhap extends CommonDTO {
 
     String maPN;
     String maSP;
@@ -21,8 +22,8 @@ public class ChiTietPhieuNhap {
     }
 
     @Builder
-    public ChiTietPhieuNhap(String ma, String maSP, Integer soLuong, Float donGia) {
-        this.maPN = ma;
+    public ChiTietPhieuNhap(String maPN, String maSP, Integer soLuong, Float donGia) {
+        this.maPN = maPN;
         this.maSP = maSP;
         this.soLuong = soLuong;
         this.donGia = donGia;

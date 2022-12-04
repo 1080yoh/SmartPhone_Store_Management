@@ -1,18 +1,18 @@
 package giaodienchuan.model.BackEnd.QuanLyLoaiSanPham;
 
-import org.springframework.data.annotation.Id;
+import giaodienchuan.model.BackEnd.common.CommonDTO;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("loaisanpham")
-public class LoaiSanPham {
-    @Id
+public class LoaiSanPham extends CommonDTO {
+
     String maLSP;
     String tenLSP, moTa;
 
-    public LoaiSanPham(String MaLSP, String TenLSP, String MoTa) {
-        this.maLSP = MaLSP;
-        this.tenLSP = TenLSP;
-        this.moTa = MoTa;
+    public LoaiSanPham(String maLSP, String tenLSP, String moTa) {
+        this.maLSP = maLSP;
+        this.tenLSP = tenLSP;
+        this.moTa = moTa;
     }
 
     public String getMoTa() {

@@ -5,16 +5,15 @@
  */
 package giaodienchuan.model.BackEnd.QuanLyPhieuNhap;
 
-import org.springframework.data.annotation.Id;
+import giaodienchuan.model.BackEnd.common.CommonDTO;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Document("phieunhap")
-public class PhieuNhap {
+public class PhieuNhap extends CommonDTO {
 
-    @Id
     String maPN;
     String maNCC;
     String maNV;

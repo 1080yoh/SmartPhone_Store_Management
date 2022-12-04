@@ -1,13 +1,12 @@
 package giaodienchuan.model.BackEnd.QuanLyTaiKhoan;
 
+import giaodienchuan.model.BackEnd.common.CommonDTO;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("taikhoan")
 @ToString
-public class TaiKhoan {
-    @Id
+public class TaiKhoan extends CommonDTO {
     String username;
     String password, maNV, maQuyen;
 

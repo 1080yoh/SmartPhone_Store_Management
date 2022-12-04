@@ -1,10 +1,9 @@
 package giaodienchuan.model.BackEnd.QuanLyChiTietHoaDon;
 
-import giaodienchuan.model.BackEnd.QuanLyHoaDon.HoaDon;
 import giaodienchuan.model.BackEnd.QuanLyHoaDon.QuanLyHoaDonBUS;
 import giaodienchuan.model.BackEnd.QuanLySanPham.QuanLySanPhamBUS;
 import giaodienchuan.model.BackEnd.QuanLySanPham.SanPham;
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 
 public class QuanLyChiTietHoaDonBUS {

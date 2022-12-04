@@ -1,27 +1,26 @@
 package giaodienchuan.model.BackEnd.QuanLySanPham;
 
+import giaodienchuan.model.BackEnd.common.CommonDTO;
 import lombok.Builder;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("sanpham")
-public class SanPham {
+public class SanPham extends CommonDTO {
 
-    @Id
     String maSP;
     String maLSP, tenSP, fileNameHinhAnh;
     float donGia;
     int soLuong, trangThai;
 
     @Builder
-    public SanPham(String MaSP, String MaLSP, String TenSP, float DonGia, int SoLuong, String url, int TrangThai) {
-        this.maSP = MaSP;
-        this.maLSP = MaLSP;
-        this.tenSP = TenSP;
-        this.donGia = DonGia;
-        this.soLuong = SoLuong;
-        this.fileNameHinhAnh = url;
-        this.trangThai = TrangThai;
+    public SanPham(String maSP, String maLSP, String tenSP, float donGia, int soLuong, String fileNameHinhAnh, int trangThai) {
+        this.maSP = maSP;
+        this.maLSP = maLSP;
+        this.tenSP = tenSP;
+        this.donGia = donGia;
+        this.soLuong = soLuong;
+        this.fileNameHinhAnh = fileNameHinhAnh;
+        this.trangThai = trangThai;
     }
 
     public String getFileNameHinhAnh() {

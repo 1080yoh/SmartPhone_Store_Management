@@ -6,49 +6,36 @@ import giaodienchuan.model.BackEnd.QuanLySanPham.QuanLySanPhamBUS;
 import giaodienchuan.model.BackEnd.QuanLySanPham.SanPham;
 import giaodienchuan.model.FrontEnd.GiaoDienChuan.LoginForm;
 import giaodienchuan.model.FrontEnd.GiaoDienChuan.MyTable;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.Image;
+import org.slf4j.LoggerFactory;
+
+import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 
 public class HienThiSanPham extends FormHienThi {
 
+    // index
+    final int MASP_I = 1, MALSP_I = 2, TEN_I = 3, GIA_I = 4, SOLUONG_I = 5;
     QuanLyLoaiSanPhamBUS qllspBUS = new QuanLyLoaiSanPhamBUS();
     QuanLySanPhamBUS qlspBUS = new QuanLySanPhamBUS();
-
     JTextField txTim = new JTextField(15);
     JComboBox<String> cbTypeSearch;
     JButton btnRefresh = new JButton("Làm mới");
-
     JLabel lbImage = new JLabel();
     JTextField txMaSP = new JTextField(12);
     JTextField txLoaiSP = new JTextField(12);
     JTextField txTenSP = new JTextField(12);
     JTextField txDonGia = new JTextField(12);
     JTextField txSoLuong = new JTextField(7);
-
     JTextField txSoLuong1 = new JTextField(5);
     JTextField txSoLuong2 = new JTextField(5);
     JTextField txGia1 = new JTextField(6);
     JTextField txGia2 = new JTextField(6);
-
-    // index
-    final int MASP_I = 1, MALSP_I = 2, TEN_I = 3, GIA_I = 4, SOLUONG_I = 5;
 
     public HienThiSanPham() {
         setLayout(new BorderLayout());
@@ -170,9 +157,13 @@ public class HienThiSanPham extends FormHienThi {
                 if (sp.getMaSP().equals(masp)) {
                     int w = lbImage.getWidth();
                     int h = lbImage.getHeight();
-                    ImageIcon img = new ImageIcon(getClass().getResource("/giaodienchuan/images/Product Images/" + sp.getFileNameHinhAnh()));
-                    Image imgScaled = img.getImage().getScaledInstance(w, h, Image.SCALE_DEFAULT);
-                    lbImage.setIcon(new ImageIcon(imgScaled));
+                    try {
+                        ImageIcon img = new ImageIcon(getClass().getResource("/giaodienchuan/images/Product Images/" + sp.getFileNameHinhAnh()));
+                        Image imgScaled = img.getImage().getScaledInstance(w, h, Image.SCALE_DEFAULT);
+                        lbImage.setIcon(new ImageIcon(imgScaled));
+                    } catch (Exception e) {
+                        LoggerFactory.getLogger(HienThiSanPham.class).error("Loi hinh anh", e);
+                    }
 
                     // show info
                     String loai = qllspBUS.getLoaiSanPham(sp.getMaLSP()).getTenLSP();
@@ -258,14 +249,14 @@ public class HienThiSanPham extends FormHienThi {
         for (SanPham sp : data) {
             if (hienSanPhamAn || sp.getTrangThai() == 0) {
                 table.addRow(new String[]{
-                    String.valueOf(stt),
-                    sp.getMaSP(),
-                    sp.getMaLSP(),
-                    sp.getTenSP(),
-                    PriceFormatter.format(sp.getDonGia()),
-                    String.valueOf(sp.getSoLuong()),
-                    sp.getFileNameHinhAnh(),
-                    (sp.getTrangThai() == 0 ? "Hiện" : "Ẩn")
+                        String.valueOf(stt),
+                        sp.getMaSP(),
+                        sp.getMaLSP(),
+                        sp.getTenSP(),
+                        PriceFormatter.format(sp.getDonGia()),
+                        String.valueOf(sp.getSoLuong()),
+                        sp.getFileNameHinhAnh(),
+                        (sp.getTrangThai() == 0 ? "Hiện" : "Ẩn")
                 });
                 stt++;
             }

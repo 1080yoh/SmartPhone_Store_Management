@@ -1,29 +1,18 @@
 package giaodienchuan.model.BackEnd.spring.event;
 
 import giaodienchuan.model.BackEnd.QuanLyChiTietHoaDon.ChiTietHoaDon;
-import giaodienchuan.model.BackEnd.QuanLyChiTietHoaDon.QuanLyChiTietHoaDonDAO;
 import giaodienchuan.model.BackEnd.QuanLyChiTietPN.ChiTietPhieuNhap;
-import giaodienchuan.model.BackEnd.QuanLyChiTietPN.QuanLyChiTietPhieuNhapDAO;
 import giaodienchuan.model.BackEnd.QuanLyHoaDon.HoaDon;
-import giaodienchuan.model.BackEnd.QuanLyHoaDon.QuanLyHoaDonDAO;
 import giaodienchuan.model.BackEnd.QuanLyKhachHang.KhachHang;
-import giaodienchuan.model.BackEnd.QuanLyKhachHang.QuanLyKhachHangDAO;
 import giaodienchuan.model.BackEnd.QuanLyKhuyenMai.KhuyenMai;
-import giaodienchuan.model.BackEnd.QuanLyKhuyenMai.QuanLyKhuyenMaiDAO;
 import giaodienchuan.model.BackEnd.QuanLyLoaiSanPham.LoaiSanPham;
-import giaodienchuan.model.BackEnd.QuanLyLoaiSanPham.QuanLyLoaiSanPhamDAO;
 import giaodienchuan.model.BackEnd.QuanLyNCC.NhaCungCap;
-import giaodienchuan.model.BackEnd.QuanLyNCC.QuanLyNhaCungCapDAO;
 import giaodienchuan.model.BackEnd.QuanLyNhanVien.NhanVien;
-import giaodienchuan.model.BackEnd.QuanLyNhanVien.QuanLyNhanVienDAO;
 import giaodienchuan.model.BackEnd.QuanLyPhieuNhap.PhieuNhap;
-import giaodienchuan.model.BackEnd.QuanLyPhieuNhap.QuanLyPhieuNhapDAO;
-import giaodienchuan.model.BackEnd.QuanLyQuyen.QuanLyQuyenDAO;
 import giaodienchuan.model.BackEnd.QuanLyQuyen.Quyen;
-import giaodienchuan.model.BackEnd.QuanLySanPham.QuanLySanPhamDAO;
 import giaodienchuan.model.BackEnd.QuanLySanPham.SanPham;
-import giaodienchuan.model.BackEnd.QuanLyTaiKhoan.QuanLyTaiKhoanDAO;
 import giaodienchuan.model.BackEnd.QuanLyTaiKhoan.TaiKhoan;
+import giaodienchuan.model.BackEnd.Repo.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,7 +55,7 @@ public class DBSync {
         logger.info("[syncChiTietHoaDon] -- START -- ");
         mongoTemplate.dropCollection(ChiTietHoaDon.class);
 
-        QuanLyChiTietHoaDonDAO dao = new QuanLyChiTietHoaDonDAO();
+        QuanLyChiTietHoaDonRepo dao = new QuanLyChiTietHoaDonRepo();
         List<ChiTietHoaDon> data = dao.readDB();
         logger.info("Data: " + data.size());
 
@@ -79,7 +68,7 @@ public class DBSync {
         logger.info("[syncChiTietPhieuNhap] -- START -- ");
         mongoTemplate.dropCollection(ChiTietPhieuNhap.class);
 
-        QuanLyChiTietPhieuNhapDAO dao = new QuanLyChiTietPhieuNhapDAO();
+        QuanLyChiTietPhieuNhapRepo dao = new QuanLyChiTietPhieuNhapRepo();
         List<ChiTietPhieuNhap> data = dao.readDB();
         logger.info("Data: " + data.size());
 
@@ -92,7 +81,7 @@ public class DBSync {
         logger.info("[syncHoaDon] -- START -- ");
         mongoTemplate.dropCollection(HoaDon.class);
 
-        QuanLyHoaDonDAO dao = new QuanLyHoaDonDAO();
+        QuanLyHoaDonRepo dao = new QuanLyHoaDonRepo();
         List<HoaDon> data = dao.readDB();
         logger.info("Data: " + data.size());
 
@@ -105,7 +94,7 @@ public class DBSync {
         logger.info("[syncKhachHang] -- START -- ");
         mongoTemplate.dropCollection(KhachHang.class);
 
-        QuanLyKhachHangDAO dao = new QuanLyKhachHangDAO();
+        QuanLyKhachHangRepo dao = new QuanLyKhachHangRepo();
         List<KhachHang> data = dao.readDB();
         logger.info("Data: " + data.size());
 
@@ -118,7 +107,7 @@ public class DBSync {
         logger.info("[syncKhuyenMai] -- START -- ");
         mongoTemplate.dropCollection(KhuyenMai.class);
 
-        QuanLyKhuyenMaiDAO dao = new QuanLyKhuyenMaiDAO();
+        QuanLyKhuyenMaiRepo dao = new QuanLyKhuyenMaiRepo();
         List<KhuyenMai> data = dao.readDB();
         logger.info("Data: " + data.size());
 
@@ -131,7 +120,7 @@ public class DBSync {
         logger.info("[syncLoaiSanPham] -- START -- ");
         mongoTemplate.dropCollection(LoaiSanPham.class);
 
-        QuanLyLoaiSanPhamDAO dao = new QuanLyLoaiSanPhamDAO();
+        QuanLyLoaiSanPhamRepo dao = new QuanLyLoaiSanPhamRepo();
         List<LoaiSanPham> data = dao.readDB();
         logger.info("Data: " + data.size());
 
@@ -144,7 +133,7 @@ public class DBSync {
         logger.info("[syncNhaCungCap] -- START -- ");
         mongoTemplate.dropCollection(NhaCungCap.class);
 
-        QuanLyNhaCungCapDAO dao = new QuanLyNhaCungCapDAO();
+        QuanLyNhaCungCapRepo dao = new QuanLyNhaCungCapRepo();
         List<NhaCungCap> data = dao.readDB();
         logger.info("Data: " + data.size());
 
@@ -157,7 +146,7 @@ public class DBSync {
         logger.info("[syncNhanVien] -- START -- ");
         mongoTemplate.dropCollection(NhanVien.class);
 
-        QuanLyNhanVienDAO dao = new QuanLyNhanVienDAO();
+        QuanLyNhanVienRepo dao = new QuanLyNhanVienRepo();
         List<NhanVien> data = dao.readDB();
         logger.info("Data: " + data.size());
 
@@ -170,7 +159,7 @@ public class DBSync {
         logger.info("[syncPhieuNhap] -- START -- ");
         mongoTemplate.dropCollection(PhieuNhap.class);
 
-        QuanLyPhieuNhapDAO dao = new QuanLyPhieuNhapDAO();
+        QuanLyPhieuNhapRepo dao = new QuanLyPhieuNhapRepo();
         List<PhieuNhap> data = dao.readDB();
         logger.info("Data: " + data.size());
 
@@ -183,7 +172,7 @@ public class DBSync {
         logger.info("[syncPhanQuyen] -- START -- ");
         mongoTemplate.dropCollection(Quyen.class);
 
-        QuanLyQuyenDAO dao = new QuanLyQuyenDAO();
+        QuanLyQuyenRepo dao = new QuanLyQuyenRepo();
         List<Quyen> data = dao.readDB();
         logger.info("Data: " + data.size());
 
@@ -196,7 +185,7 @@ public class DBSync {
         logger.info("[syncSanPham] -- START -- ");
         mongoTemplate.dropCollection(SanPham.class);
 
-        QuanLySanPhamDAO dao = new QuanLySanPhamDAO();
+        QuanLySanPhamRepo dao = new QuanLySanPhamRepo();
         List<SanPham> data = dao.readDB();
         logger.info("Data: " + data.size());
 
@@ -209,7 +198,7 @@ public class DBSync {
         logger.info("[syncTaiKhoan] -- START -- ");
         mongoTemplate.dropCollection(TaiKhoan.class);
 
-        QuanLyTaiKhoanDAO dao = new QuanLyTaiKhoanDAO();
+        QuanLyTaiKhoanRepo dao = new QuanLyTaiKhoanRepo();
         List<TaiKhoan> data = dao.readDB();
         logger.info("Data: " + data.size());
 

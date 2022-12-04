@@ -6,101 +6,59 @@
 package giaodienchuan.model.BackEnd.QuanLyChiTietPN;
 
 import giaodienchuan.model.BackEnd.ConnectionDB.ConnectionDB;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
+import giaodienchuan.model.BackEnd.common.CommonDAO;
 
-public class QuanLyChiTietPhieuNhapDAO {
+import java.util.ArrayList;
+import java.util.Map;
+
+public class QuanLyChiTietPhieuNhapDAO extends CommonDAO<ChiTietPhieuNhap> {
 
     ConnectionDB qlctpnConnection;
 
+    public QuanLyChiTietPhieuNhapDAO() {
+        super(ChiTietPhieuNhap.class);
+    }
+
     public ArrayList<ChiTietPhieuNhap> readDB() {
-        ArrayList<ChiTietPhieuNhap> dsctpn = new ArrayList<>();
-        qlctpnConnection = new ConnectionDB();
-        try {
-
-            String query = "SELECT * FROM chitietphieunhap";
-            ResultSet r = qlctpnConnection.sqlQuery(query);
-            if (r != null) {
-                while (r.next()) {
-                    String ma = r.getString(1);
-                    String maSP = r.getString(2);
-                    Integer soLuong = r.getInt(3);
-                    Float donGia = r.getFloat(4);
-
-                    ChiTietPhieuNhap ctpn = new ChiTietPhieuNhap(ma, maSP, soLuong, donGia);
-                    dsctpn.add(ctpn);
-                }
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Không thấy data cần tìm trong ResultSet");
-
-        } finally {
-            qlctpnConnection.closeConnect();
-        }
-        return dsctpn;
-
+        return super.readDB();
     }
 
     public ArrayList<ChiTietPhieuNhap> search(String columName, String value) {
-        ArrayList<ChiTietPhieuNhap> dsctpn = new ArrayList<>();
-        qlctpnConnection = new ConnectionDB();
-        try {
-
-            String query = "SELECT * FROM chitietphieunhap WHERE" + columName + "LIKE '%" + value + "%'";
-            ResultSet r = qlctpnConnection.sqlQuery(query);
-            if (r != null) {
-                while (r.next()) {
-                    String ma = r.getString(1);
-                    String maSP = r.getString(2);
-                    Integer soLuong = r.getInt(3);
-                    Float donGia = r.getFloat(4);
-
-                    ChiTietPhieuNhap ctpn = new ChiTietPhieuNhap(ma, maSP, soLuong, donGia);
-                    dsctpn.add(ctpn);
-                }
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Không thấy data cần tìm trong ResultSet");
-
-        } finally {
-            qlctpnConnection.closeConnect();
-        }
-        return dsctpn;
+        Map<String, Object> dieuKien = toMap(new Object[][]{
+                {columName, value}
+        });
+        return super.search(null, dieuKien);
 
     }
 
-    public boolean add(ChiTietPhieuNhap ctpn) {
-        qlctpnConnection = new ConnectionDB();
-        Boolean ok = qlctpnConnection.sqlUpdate("INSERT INTO `chitietphieunhap`(`MaPN`,`MaSP`,`SoLuong`,`DonGia`) VALUE('"
-                + ctpn.getMaPN() + "', '" + ctpn.getMaSP() + "','" + ctpn.getSoLuong() + "','" + ctpn.getDonGia() + "')");
-        qlctpnConnection.closeConnect();
-        return ok;
-
+    public Boolean add(ChiTietPhieuNhap ctpn) {
+        return super.add(ctpn);
     }
 
     public Boolean deleteAll(String _mapn) {
-        qlctpnConnection = new ConnectionDB();
-        Boolean success = qlctpnConnection.sqlUpdate("DELETE FROM chitietphieunhap WHERE MaPN='" + _mapn + "';");
-        qlctpnConnection.closeConnect();
-        return success;
+        Map<String, Object> dieuKien = toMap(new Object[][]{
+                {"maPN", _mapn}
+        });
+        return super.delete(dieuKien);
     }
 
     public Boolean delete(String _mapn, String _masp) {
-        qlctpnConnection = new ConnectionDB();
-        Boolean success = qlctpnConnection.sqlUpdate("DELETE FROM chitietphieunhap WHERE MaPN='" + _mapn + "' AND MaSP='" + _masp + "';");
-        qlctpnConnection.closeConnect();
-        return success;
+        Map<String, Object> dieuKien = toMap(new Object[][]{
+                {"maPN", _mapn},
+                {"maSP", _masp},
+        });
+        return super.delete(dieuKien);
     }
 
     public boolean update(String mapn, String masp, int soluong, float dongia) {
-        qlctpnConnection = new ConnectionDB();
-        Boolean ok = qlctpnConnection.sqlUpdate("UPDATE `chitietphieunhap` SET "
-                + "SoLuong='" + soluong
-                + "',DonGia='" + dongia
-                + "' WHERE MaPN='" + mapn + "' AND MaSP='" + masp + "';");
-        qlctpnConnection.closeConnect();
-        return ok;
+        Map<String, Object> dieuKien = toMap(new Object[][]{
+                {"maPN", mapn},
+                {"maSP", masp},
+        });
+        Map<String, Object> truong = toMap(new Object[][]{
+                {"soLuong", soluong},
+                {"donGia", dongia},
+        });
+        return super.update(dieuKien, truong);
     }
 }

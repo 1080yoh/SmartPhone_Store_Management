@@ -5,27 +5,28 @@
  */
 package giaodienchuan.model.BackEnd.QuanLyKhuyenMai;
 
-import org.springframework.data.annotation.Id;
+import giaodienchuan.model.BackEnd.common.CommonDTO;
+import lombok.Builder;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 
 @Document("khuyenmai")
-public class KhuyenMai {
+public class KhuyenMai extends CommonDTO {
 
-    @Id
     String maKM;
     String tenKM;
     float dieuKienKM, phanTramKM;
     LocalDate ngayBD, ngayKT;
 
-    public KhuyenMai(String makm, String tenkm, float dkkm, float phantramkm, LocalDate ngaybd, LocalDate ngaykt) {
-        this.maKM = makm;
-        this.tenKM = tenkm;
-        this.dieuKienKM = dkkm;
-        this.phanTramKM = phantramkm;
-        this.ngayBD = ngaybd;
-        this.ngayKT = ngaykt;
+    @Builder
+    public KhuyenMai(String maKM, String tenKM, float dieuKienKM, float phanTramKM, LocalDate ngayBD, LocalDate ngayKT) {
+        this.maKM = maKM;
+        this.tenKM = tenKM;
+        this.dieuKienKM = dieuKienKM;
+        this.phanTramKM = phanTramKM;
+        this.ngayBD = ngayBD;
+        this.ngayKT = ngayKT;
     }
 
     public String getTrangThai() {

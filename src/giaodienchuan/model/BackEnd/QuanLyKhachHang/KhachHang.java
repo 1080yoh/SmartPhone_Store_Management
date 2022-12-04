@@ -1,22 +1,21 @@
 package giaodienchuan.model.BackEnd.QuanLyKhachHang;
 
 
-import org.springframework.data.annotation.Id;
+import giaodienchuan.model.BackEnd.common.CommonDTO;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("khachhang")
-public class KhachHang {
-    @Id
+public class KhachHang extends CommonDTO {
     String maKH;
     String tenKH, diaChi, sdt;
     int trangThai;
 
-    public KhachHang(String MaKH, String TenKH, String DiaChi, String SDT, int TrangThai) {
-        this.maKH = MaKH;
-        this.tenKH = TenKH;
-        this.diaChi = DiaChi;
-        this.sdt = SDT;
-        this.trangThai = TrangThai;
+    public KhachHang(String maKH, String tenKH, String diaChi, String sdt, int trangThai) {
+        this.maKH = maKH;
+        this.tenKH = tenKH;
+        this.diaChi = diaChi;
+        this.sdt = sdt;
+        this.trangThai = trangThai;
     }
 
     public String getMaKH() {

@@ -1,10 +1,11 @@
 package giaodienchuan.model.BackEnd.QuanLyChiTietHoaDon;
 
+import giaodienchuan.model.BackEnd.common.CommonDTO;
 import lombok.Builder;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("chitiethoadon")
-public class ChiTietHoaDon {
+public class ChiTietHoaDon extends CommonDTO {
 
     private String maHoaDon;
 
@@ -13,11 +14,11 @@ public class ChiTietHoaDon {
     private float donGia;
 
     @Builder
-    public ChiTietHoaDon(String mahd, String masp, int soluong, float dongia) {
-        this.maHoaDon = mahd;
-        this.maSanPham = masp;
-        this.soLuong = soluong;
-        this.donGia = dongia;
+    public ChiTietHoaDon(String maHoaDon, String maSanPham, int soLuong, float donGia) {
+        this.maHoaDon = maHoaDon;
+        this.maSanPham = maSanPham;
+        this.soLuong = soLuong;
+        this.donGia = donGia;
     }
 
     public String getMaHoaDon() {

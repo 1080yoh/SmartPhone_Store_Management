@@ -1,19 +1,18 @@
 package giaodienchuan.model.BackEnd.QuanLyQuyen;
 
-import org.springframework.data.annotation.Id;
+import giaodienchuan.model.BackEnd.common.CommonDTO;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("phanquyen")
-public class Quyen {
+public class Quyen  extends CommonDTO {
 
-    @Id
     String maQuyen;
     String tenQuyen, chiTietQuyen;
-    
-    public Quyen(String maquyen, String tenquyen, String chitietquyen) {
-        this.maQuyen = maquyen;
-        this.tenQuyen = tenquyen;
-        this.chiTietQuyen = chitietquyen;
+
+    public Quyen(String maQuyen, String tenQuyen, String chiTietQuyen) {
+        this.maQuyen = maQuyen;
+        this.tenQuyen = tenQuyen;
+        this.chiTietQuyen = chiTietQuyen;
     }
 
     public String getTenQuyen() {

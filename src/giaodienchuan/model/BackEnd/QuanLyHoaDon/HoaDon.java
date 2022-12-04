@@ -1,15 +1,14 @@
 package giaodienchuan.model.BackEnd.QuanLyHoaDon;
 
-import org.springframework.data.annotation.Id;
+import giaodienchuan.model.BackEnd.common.CommonDTO;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Document("hoadon")
-public class HoaDon {
+public class HoaDon extends CommonDTO {
 
-    @Id
     private String maHoaDon;
     private String maNhanVien = "";
     private String maKhachHang = "";
@@ -23,13 +22,13 @@ public class HoaDon {
         gioLap = LocalTime.now();
     }
 
-    public HoaDon(String maHoaDon, String maNhanVien, String maKhachHang, String maKhuyenMai, LocalDate ngayNhap, LocalTime gioNhap, float tongTien) {
+    public HoaDon(String maHoaDon, String maNhanVien, String maKhachHang, String maKhuyenMai, LocalDate ngayLap, LocalTime gioLap, float tongTien) {
         this.maHoaDon = maHoaDon;
         this.maNhanVien = maNhanVien;
         this.maKhachHang = maKhachHang;
         this.maKhuyenMai = maKhuyenMai;
-        this.ngayLap = ngayNhap;
-        this.gioLap = gioNhap;
+        this.ngayLap = ngayLap;
+        this.gioLap = gioLap;
         this.tongTien = tongTien;
     }
 

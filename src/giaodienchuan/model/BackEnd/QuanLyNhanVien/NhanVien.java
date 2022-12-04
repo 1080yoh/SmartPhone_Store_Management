@@ -1,26 +1,25 @@
 package giaodienchuan.model.BackEnd.QuanLyNhanVien;
 
-import org.springframework.data.annotation.Id;
+import giaodienchuan.model.BackEnd.common.CommonDTO;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 
 @Document("nhanvien")
-public class NhanVien {
+public class NhanVien extends CommonDTO {
 
-    @Id
     String maNV;
     String tenNV, diaChi, sdt;
     LocalDate ngaySinh;
     int trangThai;
 
-    public NhanVien(String MaNV, String TenNV, LocalDate NgaySinh, String DiaChi, String sdt, int trangthai) {
-        this.maNV = MaNV;
-        this.tenNV = TenNV;
-        this.ngaySinh = NgaySinh;
-        this.diaChi = DiaChi;
+    public NhanVien(String maNV, String tenNV, LocalDate ngaySinh, String diaChi, String sdt, int trangThai) {
+        this.maNV = maNV;
+        this.tenNV = tenNV;
+        this.ngaySinh = ngaySinh;
+        this.diaChi = diaChi;
         this.sdt = sdt;
-        this.trangThai = trangthai;
+        this.trangThai = trangThai;
     }
 
     public String getMaNV() {

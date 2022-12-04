@@ -16,7 +16,7 @@ public class QuanLyKhachHangBUS {
             System.out.print(kh.getMaKH() + " ");
             System.out.println(kh.getTenKH() + " ");
             System.out.println(kh.getDiaChi() + " ");
-            System.out.println(kh.getSDT() + " ");
+            System.out.println(kh.getSdt() + " ");
             System.out.println(kh.getTrangThai());
         });
     }
@@ -52,7 +52,7 @@ public class QuanLyKhachHangBUS {
                 if (kh.getMaKH().toLowerCase().contains(value.toLowerCase())
                         || kh.getTenKH().toLowerCase().contains(value.toLowerCase())
                         || kh.getDiaChi().toLowerCase().contains(value.toLowerCase())
-                        || String.valueOf(kh.getSDT()).toLowerCase().contains(value.toLowerCase())
+                        || String.valueOf(kh.getSdt()).toLowerCase().contains(value.toLowerCase())
                         || String.valueOf(kh.getTrangThai() == 1 ? "Ẩn" : "Hiện").toLowerCase().contains(value.toLowerCase())) {
                     result.add(kh);
                 }
@@ -74,7 +74,7 @@ public class QuanLyKhachHangBUS {
                         }
                         break;
                     case "Số điện thoại":
-                        if (kh.getSDT().toLowerCase().contains(value.toLowerCase())) {
+                        if (kh.getSdt().toLowerCase().contains(value.toLowerCase())) {
                             result.add(kh);
                         }
                         break;
@@ -126,7 +126,7 @@ public class QuanLyKhachHangBUS {
                 if (kh.getMaKH().equals(makh)) {
                     kh.setTenKH(tenkh);
                     kh.setDiaChi(diachi);
-                    kh.setSDT(sdt);
+                    kh.setSdt(sdt);
                 }
             });
         }

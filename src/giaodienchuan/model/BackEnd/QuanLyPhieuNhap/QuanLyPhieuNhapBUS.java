@@ -9,10 +9,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-/**
- *
- * @author Admin
- */
 public class QuanLyPhieuNhapBUS {
 
     QuanLyPhieuNhapDAO DAO = new QuanLyPhieuNhapDAO();

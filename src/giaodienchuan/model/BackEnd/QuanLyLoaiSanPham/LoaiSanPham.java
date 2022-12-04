@@ -1,36 +1,39 @@
-
 package giaodienchuan.model.BackEnd.QuanLyLoaiSanPham;
 
+import org.springframework.data.annotation.Id;
+
 public class LoaiSanPham {
-    String MaLSP, TenLSP, MoTa;
-    
+    @Id
+    String maLSP;
+    String tenLSP, moTa;
+
     public LoaiSanPham(String MaLSP, String TenLSP, String MoTa) {
-        this.MaLSP = MaLSP;
-        this.TenLSP = TenLSP;
-        this.MoTa = MoTa;
+        this.maLSP = MaLSP;
+        this.tenLSP = TenLSP;
+        this.moTa = MoTa;
     }
 
     public String getMoTa() {
-        return MoTa;
+        return moTa;
     }
 
     public void setMoTa(String MoTa) {
-        this.MoTa = MoTa;
+        this.moTa = MoTa;
     }
 
     public String getMaLSP() {
-        return MaLSP;
+        return maLSP;
     }
 
     public void setMaLSP(String MaLSP) {
-        this.MaLSP = MaLSP;
+        this.maLSP = MaLSP;
     }
 
     public String getTenLSP() {
-        return TenLSP;
+        return tenLSP;
     }
 
     public void setTenLSP(String TenLSP) {
-        this.TenLSP = TenLSP;
+        this.tenLSP = TenLSP;
     }
 }

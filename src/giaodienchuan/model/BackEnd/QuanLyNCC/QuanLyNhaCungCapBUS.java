@@ -16,7 +16,7 @@ public class QuanLyNhaCungCapBUS {
             System.out.print(ncc.getMaNCC() + " ");
             System.out.print(ncc.getTenNCC() + " ");
             System.out.println(ncc.getDiaChi() + " ");
-            System.out.println(ncc.getSDT() + " ");
+            System.out.println(ncc.getSdt() + " ");
             System.out.println(ncc.getFax());
         });
     }
@@ -46,7 +46,7 @@ public class QuanLyNhaCungCapBUS {
                 if (ncc.getMaNCC().toLowerCase().contains(value.toLowerCase())
                         || ncc.getTenNCC().toLowerCase().contains(value.toLowerCase())
                         || ncc.getDiaChi().toLowerCase().contains(value.toLowerCase())
-                        || String.valueOf(ncc.getSDT()).toLowerCase().contains(value.toLowerCase())
+                        || String.valueOf(ncc.getSdt()).toLowerCase().contains(value.toLowerCase())
                         || String.valueOf(ncc.getFax()).toLowerCase().contains(value.toLowerCase())) {
                     result.add(ncc);
                 }
@@ -68,7 +68,7 @@ public class QuanLyNhaCungCapBUS {
                         }
                         break;
                     case "SĐT":
-                        if (String.valueOf(ncc.getSDT()).toLowerCase().contains(value.toLowerCase())) {
+                        if (String.valueOf(ncc.getSdt()).toLowerCase().contains(value.toLowerCase())) {
                             result.add(ncc);
                         }
                         break;
@@ -123,7 +123,7 @@ public class QuanLyNhaCungCapBUS {
                 if (ncc.getMaNCC().equals(mancc)) {
                     ncc.setTenNCC(tenncc);
                     ncc.setDiaChi(diachi);
-                    ncc.setSDT(sdt);
+                    ncc.setSdt(sdt);
                     ncc.setFax(fax);
                 }
             });

@@ -13,10 +13,6 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Admin
- */
 public class QuanLyPhieuNhapDAO {
 
     ConnectionDB connection;

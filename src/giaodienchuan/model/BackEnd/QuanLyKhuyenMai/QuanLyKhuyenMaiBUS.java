@@ -8,10 +8,6 @@ package giaodienchuan.model.BackEnd.QuanLyKhuyenMai;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-/**
- *
- * @author DELL
- */
 public class QuanLyKhuyenMaiBUS {
     private ArrayList<KhuyenMai> dskm = new ArrayList<>();
     QuanLyKhuyenMaiDAO qlkmDAO = new QuanLyKhuyenMaiDAO();

@@ -18,7 +18,7 @@ public class QuanLyNhanVienBUS {
             System.out.println(nv.getTenNV() + " ");
             System.out.println(nv.getNgaySinh() + " ");
             System.out.println(nv.getDiaChi() + " ");
-            System.out.println(nv.getSDT() + " ");
+            System.out.println(nv.getSdt() + " ");
             System.out.println(nv.getTrangThai());
         });
     }
@@ -53,7 +53,7 @@ public class QuanLyNhanVienBUS {
                         || nv.getTenNV().toLowerCase().contains(value.toLowerCase())
                         || nv.getNgaySinh().toString().toLowerCase().contains(value.toLowerCase())
                         || nv.getDiaChi().toLowerCase().contains(value.toLowerCase())
-                        || nv.getSDT().toLowerCase().contains(value.toLowerCase())
+                        || nv.getSdt().toLowerCase().contains(value.toLowerCase())
                         || String.valueOf(nv.getTrangThai() == 1 ? "Ẩn" : "Hiện").toLowerCase().contains(value.toLowerCase())) {
                     result.add(nv);
                 }
@@ -80,7 +80,7 @@ public class QuanLyNhanVienBUS {
                         }
                         break;
                     case "Số điện thoại":
-                        if (nv.getSDT().toLowerCase().contains(value.toLowerCase())) {
+                        if (nv.getSdt().toLowerCase().contains(value.toLowerCase())) {
                             result.add(nv);
                         }
                         break;
@@ -144,7 +144,7 @@ public class QuanLyNhanVienBUS {
                     nv.setTenNV(tennv);
                     nv.setNgaySinh(ngaysinh);
                     nv.setDiaChi(diachi);
-                    nv.setSDT(sdt);
+                    nv.setSdt(sdt);
                     nv.setTrangThai(trangthai);
                 }
             });

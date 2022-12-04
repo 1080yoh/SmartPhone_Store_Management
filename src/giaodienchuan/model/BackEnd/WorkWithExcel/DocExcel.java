@@ -25,7 +25,6 @@ import giaodienchuan.model.FrontEnd.GiaoDienChuan.MyTable;
 import java.awt.FileDialog;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Iterator;
@@ -36,10 +35,6 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
-/**
- *
- * @author Admin
- */
 public class DocExcel {
 
     FileDialog fd = new FileDialog(new JFrame(), "Đọc excel", FileDialog.LOAD);
@@ -104,7 +99,7 @@ public class DocExcel {
                                 "Cũ:", nccOld.getMaNCC(),
                                 nccOld.getTenNCC(),
                                 nccOld.getDiaChi(),
-                                nccOld.getSDT(),
+                                nccOld.getSdt(),
                                 nccOld.getFax()
                             });
                             mtb.addRow(new String[]{
@@ -361,7 +356,7 @@ public class DocExcel {
                                 "Cũ:", khOLD.getMaKH(),
                                 khOLD.getTenKH(),
                                 khOLD.getDiaChi(),
-                                khOLD.getSDT(),
+                                khOLD.getSdt(),
                                 String.valueOf(khOLD.getTrangThai())
                             });
                             mtb.addRow(new String[]{
@@ -451,7 +446,7 @@ public class DocExcel {
                                 nvOld.getTenNV(),
                                 String.valueOf(nvOld.getNgaySinh()),
                                 nvOld.getDiaChi(),
-                                nvOld.getSDT(),
+                                nvOld.getSdt(),
                                 String.valueOf(nvOld.getTrangThai())
                             });
                             mtb.addRow(new String[]{

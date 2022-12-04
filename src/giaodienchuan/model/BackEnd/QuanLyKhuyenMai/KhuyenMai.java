@@ -5,32 +5,32 @@
  */
 package giaodienchuan.model.BackEnd.QuanLyKhuyenMai;
 
+import org.springframework.data.annotation.Id;
+
 import java.time.LocalDate;
 
-/**
- *
- * @author DELL
- */
 public class KhuyenMai {
 
-    String MaKM, TenKM;
-    float DieuKienKM, PhanTramKM;
-    LocalDate NgayBD, NgayKT;
+    @Id
+    String maKM;
+    String tenKM;
+    float dieuKienKM, phanTramKM;
+    LocalDate ngayBD, ngayKT;
 
     public KhuyenMai(String makm, String tenkm, float dkkm, float phantramkm, LocalDate ngaybd, LocalDate ngaykt) {
-        this.MaKM = makm;
-        this.TenKM = tenkm;
-        this.DieuKienKM = dkkm;
-        this.PhanTramKM = phantramkm;
-        this.NgayBD = ngaybd;
-        this.NgayKT = ngaykt;
+        this.maKM = makm;
+        this.tenKM = tenkm;
+        this.dieuKienKM = dkkm;
+        this.phanTramKM = phantramkm;
+        this.ngayBD = ngaybd;
+        this.ngayKT = ngaykt;
     }
 
     public String getTrangThai() {
         LocalDate now = LocalDate.now();
-        if (now.isBefore(this.NgayBD)) {
+        if (now.isBefore(this.ngayBD)) {
             return "Chưa bắt đầu";
-        } else if (now.isAfter(this.NgayKT)) {
+        } else if (now.isAfter(this.ngayKT)) {
             return "Đã kết thúc";
         } else {
             return "Đang diễn ra";
@@ -38,51 +38,51 @@ public class KhuyenMai {
     }
 
     public String getMaKM() {
-        return MaKM;
+        return maKM;
     }
 
     public void setMaKM(String MaKM) {
-        this.MaKM = MaKM;
+        this.maKM = MaKM;
     }
 
     public String getTenKM() {
-        return TenKM;
+        return tenKM;
     }
 
     public void setTenKM(String TenKM) {
-        this.TenKM = TenKM;
+        this.tenKM = TenKM;
     }
 
     public float getDieuKienKM() {
-        return DieuKienKM;
+        return dieuKienKM;
     }
 
     public void setDieuKienKM(float DieuKienKM) {
-        this.DieuKienKM = DieuKienKM;
+        this.dieuKienKM = DieuKienKM;
     }
 
     public float getPhanTramKM() {
-        return PhanTramKM;
+        return phanTramKM;
     }
 
     public void setPhanTramKM(float PhanTramKM) {
-        this.PhanTramKM = PhanTramKM;
+        this.phanTramKM = PhanTramKM;
     }
 
     public LocalDate getNgayBD() {
-        return NgayBD;
+        return ngayBD;
     }
 
     public void setNgayBD(LocalDate NgayBD) {
-        this.NgayBD = NgayBD;
+        this.ngayBD = NgayBD;
     }
 
     public LocalDate getNgayKT() {
-        return NgayKT;
+        return ngayKT;
     }
 
     public void setNgayKT(LocalDate NgayKT) {
-        this.NgayKT = NgayKT;
+        this.ngayKT = NgayKT;
     }
 
 }

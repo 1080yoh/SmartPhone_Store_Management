@@ -8,26 +8,16 @@ package giaodienchuan.model.BackEnd.QuanLyNCC;
 ;
 
 import giaodienchuan.model.BackEnd.ConnectionDB.ConnectionDB;
-import giaodienchuan.model.BackEnd.QuanLySanPham.SanPham;
-import java.sql.Connection;
+
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Admin
- */
-
-
 public class QuanLyNhaCungCapDAO {
 
     ConnectionDB qlnccConnection;
 
-//    public QuanLyNhaCungCapDAO(){
-//        nhaCungCapDB.logIn("root","");
-//    }
     public ArrayList<NhaCungCap> readDB() {
         ArrayList<NhaCungCap> dsncc = new ArrayList<>();
         qlnccConnection = new ConnectionDB();
@@ -86,7 +76,7 @@ public class QuanLyNhaCungCapDAO {
                 + ncc.getMaNCC() + "', '" 
                 + ncc.getTenNCC() + "', '" 
                 + ncc.getDiaChi() + "','" 
-                + ncc.getSDT() + "','" 
+                + ncc.getSdt() + "','"
                 + ncc.getFax() + "');");
 
         qlnccConnection.closeConnect();

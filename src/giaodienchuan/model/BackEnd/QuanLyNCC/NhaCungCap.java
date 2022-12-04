@@ -5,35 +5,34 @@
  */
 package giaodienchuan.model.BackEnd.QuanLyNCC;
 
-/**
- *
- * @author Admin
- */
+import org.springframework.data.annotation.Id;
+
 public class NhaCungCap {
+    @Id
     private String maNCC;
     private String tenNCC;
     private String diaChi;
-    private String SDT;
-    private String Fax;
+    private String sdt;
+    private String fax;
     
     public NhaCungCap(){
         
     }
-    public NhaCungCap(String maNCC,String tenNCC, String diaChi, String SDT, String Fax)
+    public NhaCungCap(String maNCC, String tenNCC, String diaChi, String sdt, String Fax)
     {
         this.maNCC=maNCC;
         this.tenNCC=tenNCC;
         this.diaChi=diaChi;
-        this.SDT=SDT;
-        this.Fax=Fax;
+        this.sdt = sdt;
+        this.fax =Fax;
     }
     public NhaCungCap(NhaCungCap n)
     {
         this.maNCC=n.maNCC;
         this.tenNCC=n.tenNCC;
         this.diaChi=n.diaChi;
-        this.SDT=n.SDT;
-        this.Fax=n.Fax;
+        this.sdt =n.sdt;
+        this.fax =n.fax;
     }
 
     public String getMaNCC() {
@@ -48,12 +47,12 @@ public class NhaCungCap {
         return diaChi;
     }
 
-    public String getSDT() {
-        return SDT;
+    public String getSdt() {
+        return sdt;
     }
 
     public String getFax() {
-        return Fax;
+        return fax;
     }
 
     public void setMaNCC(String maNCC) {
@@ -68,12 +67,12 @@ public class NhaCungCap {
         this.diaChi = diaChi;
     }
 
-    public void setSDT(String SDT) {
-        this.SDT = SDT;
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
     }
 
     public void setFax(String Fax) {
-        this.Fax = Fax;
+        this.fax = Fax;
     }
         
     

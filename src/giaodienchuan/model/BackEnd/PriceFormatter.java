@@ -9,10 +9,6 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-/**
- *
- * @author DELL
- */
 public class PriceFormatter {
 
     public static String format(float num) {

@@ -8,10 +8,6 @@ package giaodienchuan.model.FrontEnd.MyButton;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-/**
- *
- * @author DELL
- */
 public class SuaButton extends JButton {
     public SuaButton() {
         this.setText("Sửa");

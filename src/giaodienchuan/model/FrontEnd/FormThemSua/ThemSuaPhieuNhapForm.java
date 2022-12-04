@@ -23,10 +23,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-/**
- *
- * @author Admin
- */
 public class ThemSuaPhieuNhapForm extends JFrame {
 
     String type;

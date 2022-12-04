@@ -41,10 +41,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
-/**
- *
- * @author nguye
- */
 public class WritePDF {
 
     Document document;

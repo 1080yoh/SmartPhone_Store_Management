@@ -109,7 +109,7 @@ public class ThemSuaNhanVienForm extends JFrame {
             txNgaysinh.setText(this.nvSua.getNgaySinh().toString());
             dPickerNgaySinh.setDate(this.nvSua.getNgaySinh());
             txDiachi.setText(this.nvSua.getDiaChi());
-            txSDT.setText(this.nvSua.getSDT());
+            txSDT.setText(this.nvSua.getSdt());
 
             txManv.setEditable(false);
 

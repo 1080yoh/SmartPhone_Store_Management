@@ -72,7 +72,7 @@ public class ThemSuaNhaCungCapForm extends JFrame {
             txMaNCC.setText(this.nccSua.getMaNCC());
             txTenNCC.setText(this.nccSua.getTenNCC());
             txDiaChi.setText(this.nccSua.getDiaChi());
-            txSDT.setText(String.valueOf(this.nccSua.getSDT()));
+            txSDT.setText(String.valueOf(this.nccSua.getSdt()));
             txFax.setText(String.valueOf(this.nccSua.getFax()));
 
             txMaNCC.setEditable(false);

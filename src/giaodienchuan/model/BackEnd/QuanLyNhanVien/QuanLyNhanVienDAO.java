@@ -77,7 +77,7 @@ public class QuanLyNhanVienDAO {
                 + nv.getTenNV() + "', '" 
                 + nv.getNgaySinh() + "', '" 
                 + nv.getDiaChi() + "', '" 
-                + nv.getSDT() + "', '" 
+                + nv.getSdt() + "', '"
                 + nv.getTrangThai() + "');");
         qlnvConnection.closeConnect();
         return ok;

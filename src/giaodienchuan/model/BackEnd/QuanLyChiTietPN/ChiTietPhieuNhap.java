@@ -6,15 +6,9 @@
 package giaodienchuan.model.BackEnd.QuanLyChiTietPN;
 
 import lombok.Builder;
-import org.springframework.data.annotation.Id;
 
-/**
- *
- * @author Admin
- */
 public class ChiTietPhieuNhap {
 
-    @Id
     String ma;
     String maSP;
     Integer soLuong;
@@ -36,28 +30,28 @@ public class ChiTietPhieuNhap {
         return ma;
     }
 
-    public String getMaSP() {
-        return maSP;
-    }
-
-    public Integer getSoLuong() {
-        return soLuong;
-    }
-
-    public Float getDonGia() {
-        return donGia;
-    }
-
     public void setMa(String ma) {
         this.ma = ma;
+    }
+
+    public String getMaSP() {
+        return maSP;
     }
 
     public void setMaSP(String maSP) {
         this.maSP = maSP;
     }
 
+    public Integer getSoLuong() {
+        return soLuong;
+    }
+
     public void setSoLuong(Integer soLuong) {
         this.soLuong = soLuong;
+    }
+
+    public Float getDonGia() {
+        return donGia;
     }
 
     public void setDonGia(Float donGia) {

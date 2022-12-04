@@ -1,9 +1,11 @@
 package giaodienchuan.model.BackEnd.QuanLySanPham;
 
 import lombok.Builder;
+import org.springframework.data.annotation.Id;
 
 public class SanPham {
 
+    @Id
     String maSP;
     String maLSP, tenSP, fileNameHinhAnh;
     float donGia;

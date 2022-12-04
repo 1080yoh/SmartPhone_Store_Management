@@ -11,10 +11,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-/**
- *
- * @author DELL
- */
 public class BeginForm extends JPanel {
 
     JLabel lbInfo;

@@ -15,10 +15,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Admin
- */
 public class ChonNhaCungCapForm extends JFrame {
 
     HienThiNhaCungCap formHienThi = new HienThiNhaCungCap();

@@ -73,7 +73,7 @@ public class QuanLyKhachHangDAO {
                 + kh.getMaKH() + "', '"
                 + kh.getTenKH() + "', '"
                 + kh.getDiaChi() + "','"
-                + kh.getSDT() + "','"
+                + kh.getSdt() + "','"
                 + kh.getTrangThai() + "');");
         qlkhConnection.closeConnect();
         return ok;

@@ -5,15 +5,12 @@
  */
 package giaodienchuan.model.BackEnd.QuanLyChiTietPN;
 
-import giaodienchuan.model.BackEnd.QuanLySanPham.SanPham;
 import giaodienchuan.model.BackEnd.QuanLyPhieuNhap.QuanLyPhieuNhapBUS;
 import giaodienchuan.model.BackEnd.QuanLySanPham.QuanLySanPhamBUS;
+import giaodienchuan.model.BackEnd.QuanLySanPham.SanPham;
+
 import java.util.ArrayList;
 
-/**
- *
- * @author Admin
- */
 public class QuanLyChiTietPhieuNhapBUS {
 
     QuanLyChiTietPhieuNhapDAO qlctpnDAO = new QuanLyChiTietPhieuNhapDAO();
@@ -92,11 +89,11 @@ public class QuanLyChiTietPhieuNhapBUS {
         }
         return null;
     }
-    
+
     public ArrayList<ChiTietPhieuNhap> getAllChiTiet(String mapn) {
         ArrayList<ChiTietPhieuNhap> result = new ArrayList<>();
-        for(ChiTietPhieuNhap ctpn : dsctpn) {
-            if(ctpn.getMa().equals(mapn)) {
+        for (ChiTietPhieuNhap ctpn : dsctpn) {
+            if (ctpn.getMa().equals(mapn)) {
                 result.add(ctpn);
             }
         }

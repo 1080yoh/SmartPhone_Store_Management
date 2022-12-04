@@ -110,7 +110,7 @@ public class HienThiKhachHang extends FormHienThi {
                     kh.getMaKH(),
                     kh.getTenKH(),
                     kh.getDiaChi(),
-                    kh.getSDT(),
+                    kh.getSdt(),
                     (kh.getTrangThai() == 0 ? "Hiện" : "Ẩn")
                 });
                 stt++;

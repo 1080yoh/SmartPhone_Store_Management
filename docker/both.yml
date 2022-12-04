@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  mongodb:
+    image: bitnami/mongodb:5.0.14
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGODB_ROOT_PASSWORD=mongo
+      - MONGODB_USERNAME=mongo
+      - MONGODB_PASSWORD=mongo
+      - MONGODB_DATABASE=quanlysieuthidienthoai
+    volumes:
+      - './mongo-backup:/bitnami/mongodb'
+
+  mysql:
+    image: bitnami/mysql:5.7
+    container_name: mysql
+    ports:
+      - '3306:3306'
+    volumes:
+      - './db-backup:/bitnami/mysql/data'
+    environment:
+      - MYSQL_ROOT_USER=root
+      - MYSQL_ROOT_PASSWORD=1234
+    #      - ALLOW_EMPTY_PASSWORD=yes
+#    healthcheck:
+#      test: [ 'CMD', '/opt/bitnami/scripts/mysql/healthcheck.sh' ]
+#      interval: 15s
+#      timeout: 5s
+#      retries: 6
